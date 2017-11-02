@@ -15,9 +15,13 @@ export default (state, {type, payload}) => {
       let currentWordTiles = {...state.currentWordTiles};
       currentWordTiles[payload.x] = state.currentWordTiles[payload.x] ? state.currentWordTiles[payload.x] : {};
       currentWordTiles[payload.x][payload.y] = true;
+      let newLetter = state.boardLetters[payload.x][payload.y];
+      if (newLetter === 'q') {
+        newLetter = 'qu';
+      }
       return {
         ...state,
-        currentWord: state.currentWord + state.boardLetters[payload.x][payload.y],
+        currentWord: state.currentWord + newLetter,
         currentWordTiles,
         latestLetterCoords: payload
       }
