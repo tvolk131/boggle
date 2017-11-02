@@ -1,13 +1,13 @@
 body {
+  margin: 0;
   background: #F57921;
+  font-family: sans-serif;
 }
 
 .game-wrapper {
-  text-align: center;
 }
 
 .letter {
-  font-family: sans-serif;
   font-size: 1.25em;
   font-weight: bold;
   display: inline-block;
@@ -26,4 +26,47 @@ body {
   border: 4px solid #FFCA08;
   display: inline-block;
   padding: 5px;
+}
+
+
+/* ---------- */
+/* Scoreboard */
+/* ---------- */
+.scoreboard {
+  padding: 10px;
+}
+
+.column {
+  float: left;
+  background: #FFFFFF;
+  padding: 5px;
+}
+
+.left, .right {
+  border-bottom: 4px solid #FFCA08;
+  border-left: 4px solid #FFCA08;
+}
+
+.left {
+  width: 120px;
+}
+
+.right {
+  width: 60px;
+  border-right: 4px solid #FFCA08;
+}
+
+.row:first-child .left, .row:first-child .right {
+  border-top: 4px solid #FFCA08;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.bold {
+  font-weight: bold;
 }
