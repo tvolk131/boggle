@@ -6,7 +6,7 @@ import { submitWord } from '../store/reducer';
 const CurrentWordViewer = (props) => (
   <div style={{padding: '10px 0'}}>
     <b>Current Word: </b>{props.currentWord.toUpperCase()}
-    <button onClick={props.submitWord} style={{float: 'right'}}>Submit Word</button>
+    <button onClick={() => {if (props.currentWord.length) {props.submitWord()}}} style={{float: 'right'}}>Submit Word</button>
   </div>
 );
 

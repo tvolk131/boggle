@@ -1,4 +1,5 @@
 const SUBMIT_WORD = 'SUBMIT_WORD';
+const ADD_LETTER = 'ADD_LETTER';
 
 export default (state, {type, payload}) => {
   switch (type) {
@@ -7,7 +8,18 @@ export default (state, {type, payload}) => {
         ...state,
         completedWords: [...state.completedWords, state.currentWord],
         currentWord: '',
-        currentWordTiles: {}
+        currentWordTiles: {},
+        latestLetterCoords: {x: null, y: null}
+      }
+    case ADD_LETTER:
+      let currentWordTiles = {...state.currentWordTiles};
+      currentWordTiles[payload.x] = state.currentWordTiles[payload.x] ? state.currentWordTiles[payload.x] : {};
+      currentWordTiles[payload.x][payload.y] = true;
+      return {
+        ...state,
+        currentWord: state.currentWord + state.boardLetters[payload.x][payload.y],
+        currentWordTiles,
+        latestLetterCoords: payload
       }
     default:
       return state
@@ -17,5 +29,12 @@ export default (state, {type, payload}) => {
 export const submitWord = () => {
   return {
     type: SUBMIT_WORD
+  };
+};
+
+export const addLetter = payload => {
+  return {
+    type: ADD_LETTER,
+    payload
   };
 };
