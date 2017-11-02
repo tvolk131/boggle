@@ -8,7 +8,7 @@ const Scoreboard = (props) => {
     rows.push(
       <div className='row' key={index}>
         <div className='column left'>
-          {word}
+          {word.toLowerCase()}
         </div>
         <div className='column right'>
           {getScore(word)}
