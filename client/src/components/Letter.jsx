@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Letter = (props) => (
-  <div className='letter'>{formatLetter(props.letter)}</div>
+  <span onClick={() => {console.log(props.coords)}} className='letter'>{formatLetter(props.letter)}</span>
 );
 
 const formatLetter = (string) => {

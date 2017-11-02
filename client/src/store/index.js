@@ -5,7 +5,7 @@ import dice from '../dice.js';
 const initialState = {
   completedWords: [],
   currentWord: '',
-  currentWordTiles: {},
+  currentWordTiles: {}, // Will contain x/y coordinates accessible by something like currentWordTiles[0][3] which will return either true or undefined
   boardLetters: dice.generateBoard()
 };
 

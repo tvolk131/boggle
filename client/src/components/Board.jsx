@@ -6,9 +6,9 @@ import Letter from './Letter.jsx';
 const Board = (props) => {
   let items = [];
   let index = 0;
-  props.letters.forEach((row) => {
-    row.forEach((letter) => {
-      items.push(<Letter letter={letter} key={items.length} />);
+  props.letters.forEach((row, y) => {
+    row.forEach((letter, x) => {
+      items.push(<Letter letter={letter} coords={{x, y}} key={items.length} />);
       index++;
       if (index % 5 === 0) {
         items.push(<br key={items.length}/>);
