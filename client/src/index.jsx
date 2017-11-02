@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 import Board from './components/Board.jsx';
+import './styles.css'
 
 render(
   <Provider store={store}>
