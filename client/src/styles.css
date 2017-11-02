@@ -1,3 +1,11 @@
+body {
+  background: #F57921;
+}
+
+.game-wrapper {
+  text-align: center;
+}
+
 .letter {
   font-family: sans-serif;
   font-size: 1.25em;

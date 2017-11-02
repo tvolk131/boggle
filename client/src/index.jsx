@@ -8,6 +8,8 @@ import './styles.css'
 
 render(
   <Provider store={store}>
-    <Board />
+    <div className='game-wrapper'>
+      <Board />
+    </div>
   </Provider>
 , document.getElementById('app'));
