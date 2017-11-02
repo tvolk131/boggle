@@ -5,7 +5,7 @@ export default (state, {type, payload}) => {
     case SUBMIT_WORD:
       return {
         ...state,
-        completedWords: [...state.completedWords, currentWord],
+        completedWords: [...state.completedWords, state.currentWord],
         currentWord: '',
         currentWordTiles: {}
       }
@@ -14,7 +14,8 @@ export default (state, {type, payload}) => {
   }
 };
 
-export const submitWord = payload => ({
-  type: SUBMIT_WORD,
-  payload
-});
+export const submitWord = () => {
+  return {
+    type: SUBMIT_WORD
+  };
+};

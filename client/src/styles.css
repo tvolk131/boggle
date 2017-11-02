@@ -32,10 +32,6 @@ body {
 /* ---------- */
 /* Scoreboard */
 /* ---------- */
-.scoreboard {
-  padding: 10px;
-}
-
 .column {
   float: left;
   background: #FFFFFF;

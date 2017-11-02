@@ -5,6 +5,7 @@ import store from './store';
 
 import Title from './components/Title.jsx';
 import Board from './components/Board.jsx';
+import CurrentWordViewer from './components/CurrentWordViewer.jsx';
 import Scoreboard from './components/Scoreboard.jsx';
 import './styles.css'
 
@@ -13,6 +14,7 @@ render(
     <div className='game-wrapper'>
       <Title />
       <Board />
+      <CurrentWordViewer />
       <Scoreboard />
     </div>
   </Provider>
