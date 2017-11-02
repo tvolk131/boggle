@@ -5,9 +5,10 @@ import { submitWord } from '../store/reducer';
 import { getWord } from '../helpers';
 
 const CurrentWordViewer = (props) => (
-  <div style={{padding: '10px 0'}}>
-    <b>Current Word: </b>{getWord(props.boardLetters, props.letterStack)}
+  <div style={{padding: '18px 0'}}>
+    <div style={{float: 'left'}}><b>Current Word: </b>{getWord(props.boardLetters, props.letterStack)}</div>
     <button onClick={props.submitWord} style={{float: 'right'}}>Submit Word</button>
+    <br/>
   </div>
 );
 
