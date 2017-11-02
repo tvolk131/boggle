@@ -20,6 +20,9 @@ export const isTileSelected = (stack, coords) => {
 };
 
 export const isLatestTile = (stack, coords) => {
+  if (!stack.length) {
+    return true;
+  }
   return stack[stack.length - 1].x === coords.x && stack[stack.length - 1].y === coords.y;
 };
 

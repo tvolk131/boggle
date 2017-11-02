@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addLetter } from '../store/reducer';
+import { addLetter, removeLastLetter } from '../store/reducer';
 import { isTileSelected, isLatestTile, tilesAreAdjacent } from '../helpers';
 
 const Letter = (props) => {
@@ -9,7 +9,9 @@ const Letter = (props) => {
 
   return (
     <span onClick={() => {
-      if (isNewTileValid(props.letterStack, props.coords)) {
+      if (props.letterStack.length && isLatestTile(props.letterStack, props.coords)) {
+        props.removeLastLetter();
+      } else if (isNewTileValid(props.letterStack, props.coords)) {
         props.addLetter(props.coords);
       }
     }} className='letter' style={style}>{formatLetter(props.letter)}</span>
@@ -40,7 +42,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-  addLetter
+  addLetter,
+  removeLastLetter
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Letter);
