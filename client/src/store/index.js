@@ -4,9 +4,7 @@ import dice from '../dice.js';
 
 const initialState = {
   completedWords: [],
-  currentWord: '',
-  latestLetterCoords: {x: null, y: null},
-  currentWordTiles: {}, // Will contain x/y coordinates accessible by something like currentWordTiles[0][3] which will return either true or undefined
+  letterStack: [], // Contains a list of coordinates representing the letters that make up the current word, in the order they were clicked
   boardLetters: dice.generateBoard()
 };
 
